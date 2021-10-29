@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.logo{
+  font-size: 30px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #F57C00 -13.87%, #FFCF7F 118.91%, #FFB8B8 118.91%);
+  background-clip: text;
+  color: transparent;
+}
+
+.hero{
+  background: '#F57C00';
+  background-clip: text;
+  color: transparent;
+}
+
+.body{
+  min-height: calc(100vh - 210px);
+}
