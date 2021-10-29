@@ -4,6 +4,7 @@ import { query, collection, limit, orderBy } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 
+import Loader from '../components/loader';
 import { useAuth } from '../hooks/useAuth';
 import { useFireStore } from '../hooks/useFireStore';
 import { firestore } from '../firebase/baseInit';
@@ -76,7 +77,7 @@ export default function Index() {
     });
   };
 
-  if (!docs.length) return <div>Loading...</div>;
+  if (!docs.length) return <Loader />;
 
   return (
     <div>

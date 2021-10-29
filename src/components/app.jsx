@@ -13,6 +13,8 @@ import technology from '../pages/category/technology';
 import tweaks from '../pages/category/tweaks';
 import notFound from '../pages/404';
 
+import ProtectedRoute from './ProtectedRoute';
+
 export default function App() {
   return (
     <div>
@@ -23,8 +25,8 @@ export default function App() {
             <Switch>
               <Route path="/" component={landing} exact />
               <Route path="/blogs/:slug" component={singleBlog} exact />
-              <Route path="/create-blog" component={create} exact />
-              <Route path="/my-blogs" component={userBlogs} exact />
+              <ProtectedRoute path="/create-blog" component={create} exact />
+              <ProtectedRoute path="/my-blogs" component={userBlogs} exact />
               <Route path="/category/gaming" component={gaming} exact />
               <Route path="/category/technology" component={technology} exact />
               <Route path="/category/tweaks" component={tweaks} exact />

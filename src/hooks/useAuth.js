@@ -2,6 +2,7 @@ import { useState, useContext, createContext, useEffect } from 'react';
 import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
 import { doc, getDoc } from 'firebase/firestore';
 
+import Loader from '../components/loader';
 import { auth, firestore } from '../firebase/baseInit';
 
 const AuthContext = createContext();
@@ -53,7 +54,7 @@ export default function AuthProvider({ children }) {
     setUser,
   };
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Loader />;
 
   return (
     <AuthContext.Provider value={value}>
