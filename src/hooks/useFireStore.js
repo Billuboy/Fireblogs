@@ -8,19 +8,20 @@ export function useFireStore(q) {
   const [docs, setDocs] = useState([]);
 
   useEffect(() => {
-    collectionData(q, { idField: 'id' })
-      .pipe(
-        map(blogs => {
-          return combineLatest([
-            ...blogs.map(b =>
-              docData(b.userRef).pipe(map(user => ({ ...b, user })))
-            ),
-          ]);
-        })
-      )
-      .subscribe(blogs => {
-        blogs.subscribe(b => setDocs(b));
-      });
+    const data = collectionData(q, { idField: 'id' }).pipe(
+      map(blogs => {
+        return combineLatest([
+          ...blogs.map(b =>
+            docData(b.userRef).pipe(map(user => ({ ...b, user }))),
+          ),
+        ]);
+      }),
+    );
+    const val = data.subscribe(blogs => {
+      blogs.subscribe(b => setDocs(b));
+    });
+
+    return () => val.unsubscribe();
   }, []);
 
   return docs;

@@ -9,13 +9,13 @@ export default function loader() {
   };
 
   return (
-    <div className="h-screen w-screen flex justify-center items-center">
+    <div className='h-screen w-screen flex justify-center items-center'>
       <motion.div
-        className="spinner_container"
+        className='spinner_container'
         animate={{ rotate: -360 }}
         transition={transition}>
-        <div className="spinner_dot"></div>
-        <div className="spinner"></div>
+        <div className='spinner_dot'></div>
+        <div className='spinner'></div>
       </motion.div>
     </div>
   );

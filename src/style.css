@@ -4,25 +4,34 @@
 @tailwind components;
 @tailwind utilities;
 
-.logo{
+pre {
+  font-family: 'Montserrat', 'sans-serif';
+}
+
+.logo {
   font-size: 30px;
   font-weight: 800;
-  background: linear-gradient(90deg, #F57C00 -13.87%, #FFCF7F 118.91%, #FFB8B8 118.91%);
+  background: linear-gradient(
+    90deg,
+    #f57c00 -13.87%,
+    #ffcf7f 118.91%,
+    #ffb8b8 118.91%
+  );
   background-clip: text;
   color: transparent;
 }
 
-.hero{
+.hero {
   background: '#F57C00';
   background-clip: text;
   color: transparent;
 }
 
-.body{
+.body {
   min-height: calc(100vh - 210px);
 }
 
-.spinner_container{
+.spinner_container {
   height: 100px;
   width: 100px;
   position: relative;
@@ -30,7 +39,7 @@
   border-radius: 50%;
 }
 
-.spinner{
+.spinner {
   position: absolute;
   z-index: 10;
   top: 10px;
@@ -41,12 +50,12 @@
   border-radius: 50%;
 }
 
-.spinner_dot{
+.spinner_dot {
   position: absolute;
   top: 0px;
   left: 40px;
   height: 10px;
   width: 10px;
   border-radius: 50%;
-  background: #FFA000;
+  background: #ffa000;
 }

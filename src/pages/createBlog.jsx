@@ -63,7 +63,7 @@ export default function Create(props) {
           photoURL: url,
           createdAt: Timestamp.fromDate(new Date(Date.now())),
         });
-      }
+      },
     );
 
     setTimeout(() => {
@@ -75,73 +75,73 @@ export default function Create(props) {
     return (
       <div>
         <div>
-          <div className="w-full h-562 overflow-hidden">
+          <div className='w-full h-562 overflow-hidden'>
             {localURL ? (
-              <img src={localURL} alt={localURL} className="w-full h-562" />
+              <img src={localURL} alt={localURL} className='w-full h-562' />
             ) : (
-              <h2 className="w-full h-full grid place-items-center">
+              <h2 className='w-full h-full grid place-items-center'>
                 Space for Image
               </h2>
             )}
           </div>
         </div>
-        <form onSubmit={HandleSubmit} className="mb-8">
-          <div className="w-full flex justify-between z-10 mt-2 items-center">
+        <form onSubmit={HandleSubmit} className='mb-8'>
+          <div className='w-full flex justify-between z-10 mt-2 items-center'>
             <div></div>
             <div>{error}</div>
-            <div className="flex justify-between">
+            <div className='flex justify-between'>
               <button
-                className="h-50 w-50 rounded-full bg-red-danger block cursor-pointer grid place-items-center"
-                type="button"
+                className='h-50 w-50 rounded-full bg-red-danger cursor-pointer grid place-items-center'
+                type='button'
                 onClick={() => {
                   setLocalURL(null);
                   setFile(null);
                 }}>
                 <ImCross />
               </button>
-              <label className="h-50 w-50 rounded-full bg-orange-200 block cursor-pointer ml-8">
+              <label className='h-50 w-50 rounded-full bg-orange-200 block cursor-pointer ml-8'>
                 <input
-                  type="file"
+                  type='file'
                   onChange={changeHandler}
-                  className="hidden"
+                  className='hidden'
                 />
-                <i className="text-24 w-full h-full grid place-items-center">
+                <i className='text-24 w-full h-full grid place-items-center'>
                   <TiPlus />
                 </i>
               </label>
             </div>
           </div>
-          <div className="flex justify-between mt-4">
-            <div className="w-60%">
-              <label htmlFor="title" className="text-18 font-semibold">
+          <div className='flex justify-between mt-4'>
+            <div className='w-60%'>
+              <label htmlFor='title' className='text-18 font-semibold'>
                 Title
               </label>
               <input
-                type="text"
-                id="title"
+                type='text'
+                id='title'
                 onChange={e => setTitle(e.target.value)}
                 value={title}
-                className="border-b-2 border-soild border-orange-200 block focus:outline-none w-full mb-8 mt-2"
+                className='border-b-2 border-soild border-orange-200 block focus:outline-none w-full mb-8 mt-2'
               />
-              <label htmlFor="desc" className="text-18 font-semibold">
+              <label htmlFor='desc' className='text-18 font-semibold'>
                 Description
               </label>
               <textarea
-                id="desc"
+                id='desc'
                 onChange={e => setDesc(e.target.value)}
                 value={desc}
-                className="block w-full focus:outline-none resize-none border-b-2 border-soild border-orange-200 mt-2"
+                className='block w-full focus:outline-none resize-none border-b-2 border-soild border-orange-200 mt-2'
               />
             </div>
-            <div className="mr-28">
-              <h2 className="text-18 font-semibold mb-4">Tags</h2>
+            <div className='mr-28'>
+              <h2 className='text-18 font-semibold mb-4'>Tags</h2>
               <button
                 className={`w-192 h-48 grid place-items-center rounded-full mb-4 ${
                   tags.filter(tag => tag === 'Technology').length
                     ? 'bg-orange-100'
                     : 'border-4 border-orange-100 border-solid'
                 }`}
-                type="button"
+                type='button'
                 onClick={() => handleTags('Technology')}>
                 Technology
               </button>
@@ -151,7 +151,7 @@ export default function Create(props) {
                     ? 'bg-coral-100'
                     : 'border-4 border-coral-100 border-solid'
                 }`}
-                type="button"
+                type='button'
                 onClick={() => handleTags('Gaming')}>
                 Gaming
               </button>
@@ -161,15 +161,15 @@ export default function Create(props) {
                     ? 'bg-yellow-100'
                     : 'border-4 border-yellow-100 border-solid'
                 }`}
-                type="button"
+                type='button'
                 onClick={() => handleTags('Tweaks')}>
                 Tweaks
               </button>
             </div>
           </div>
           <button
-            type="submit"
-            className="bg-orange-200 w-126 h-32 text-18 font-medium grid place-items-center rounded-full disabled:opacity-70"
+            type='submit'
+            className='bg-orange-200 w-126 h-32 text-18 font-medium grid place-items-center rounded-full disabled:opacity-70'
             disabled={disabled}>
             Submit
           </button>
@@ -180,9 +180,9 @@ export default function Create(props) {
 
   return (
     <div>
-      <div className="mt-4">
-        <h3 className="text-24 font-bold">CREATE BLOG</h3>
-        <div className="w-703 divide-y-4 divide-orange-200 mb-12 mt-4">
+      <div className='mt-4'>
+        <h3 className='text-24 font-bold'>CREATE BLOG</h3>
+        <div className='w-703 divide-y-4 divide-orange-200 mb-12 mt-4'>
           <p></p>
           <p></p>
         </div>
