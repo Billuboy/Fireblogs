@@ -12,7 +12,7 @@ export default function LoginModal() {
   const [name, setName] = useState('');
   let timer;
 
-  useEffect(() => () => clearTimeout(timer), []);
+  useEffect(() => () => clearTimeout(timer), [timer]);
 
   function closeModal() {
     setIsOpen(false);
